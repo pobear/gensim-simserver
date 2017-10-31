@@ -30,6 +30,7 @@ import logging
 import threading
 import shutil
 
+import Pyro4
 import numpy
 
 import gensim
@@ -784,6 +785,7 @@ class SimServer(object):
 # endclass SimServer
 
 
+@Pyro4.expose
 class SessionServer(gensim.utils.SaveLoad):
     """
     Similarity server on top of :class:`SimServer` that implements sessions = transactions.
