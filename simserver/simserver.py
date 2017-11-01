@@ -526,7 +526,7 @@ class SimServer(object):
         A call to `flush()` clears this documents-to-be-processed buffer (`flush`
         is also implicitly called when you call `index()` and `train()`).
         """
-        logger.info("adding documents to temporary buffer of %s" % (self))
+        logger.info("adding documents to temporary buffer of %s" % (self,))
         for doc in documents:
             docid = doc['id']
             #            logger.debug("buffering document %r" % docid)
@@ -1010,7 +1010,7 @@ class SessionServer(gensim.utils.SaveLoad):
                 except:
                     pass
         except Exception, e:
-            logger.warning("failed to delete SessionServer: %s" % (e))
+            logger.warning("failed to delete SessionServer: %s" % (e,))
 
     def find_similar(self, *args, **kwargs):
         """
